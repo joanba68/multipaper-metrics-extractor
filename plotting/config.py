@@ -23,6 +23,7 @@ class CommonPlotConfig:
     grid_kwargs: dict = field(default_factory=dict)
     minor_grid_kwargs: dict = field(default_factory=dict)
     minor_ticks: bool = True
+    band: bool = False
     subplots_adjust: dict = None
     time_unit: str = 's'
     output_path: Optional[str] = None

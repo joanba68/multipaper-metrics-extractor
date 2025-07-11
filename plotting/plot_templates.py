@@ -446,7 +446,7 @@ def players_chunks_owner_plot(experiment, selected_metrics, type_exp):
 
     plot_df(dfs_by_server, None, conf)
 
-def quality_master_plot(experiment, selected_metrics, type_exp):
+def quality_master_plot(experiment, selected_metrics, type_exp, band):
     """
     Plot Quality ratio per server.
     :param experiment: The name of the experiment to plot.
@@ -480,6 +480,7 @@ def quality_master_plot(experiment, selected_metrics, type_exp):
         grid=True,
         grid_minor=False,
         minor_ticks=False,
+        band = band,
         time_unit='s',
         output_path=f"plots/{type_exp}/{experiment}/quality_{experiment}.pdf"
     )

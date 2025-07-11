@@ -20,6 +20,7 @@ def plot_df(
     grid = common.grid
     grid_minor = common.grid_minor
     tight_layout = common.tight_layout
+    band = common.band
 
     # Calculate the minimum timestamp for alignment
     min_time = min(
@@ -92,6 +93,11 @@ def plot_df(
         plt.tight_layout()
     if common.subplots_adjust:
         plt.subplots_adjust(**common.subplots_adjust)
+
+    if band:
+        # Bad code... QT = 291, up 350, low 175
+        plt.axhline(y=175, color='orange', linestyle='dashdot', linewidth='1')
+        plt.axhline(y=350, color='orange', linestyle='dashdot', linewidth='1')
 
     if common.output_path:
         output_dir = os.path.dirname(common.output_path)
